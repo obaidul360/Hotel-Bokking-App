@@ -25,7 +25,7 @@ class _CatagoriseListState extends State<CatagoriseList> {
           Container(
             decoration: BoxDecoration(
               color: isSelected ? Colors.black : Colors.white,
-              borderRadius: BorderRadius.circular(15),
+              borderRadius: BorderRadius.circular(30)
             ),
             child: TextButton.icon(
               onPressed: () {
@@ -35,13 +35,13 @@ class _CatagoriseListState extends State<CatagoriseList> {
               },
               icon: Icon(
                 Icons.warehouse_outlined,
-                size: 32,
+                size: 20,
                 color: isSelected ? Colors.white : Colors.black,
               ),
               label: Text(
                 "Hotel(12)",
                 style: TextStyle(
-                  fontSize: 25,
+                  fontSize: 18,
                   color: isSelected ? Colors.white : Colors.black,
                   fontWeight: FontWeight.w400,
                 ),
@@ -51,7 +51,7 @@ class _CatagoriseListState extends State<CatagoriseList> {
           Container(
             decoration: BoxDecoration(
               color: isFav ? Colors.black : Colors.white,
-              borderRadius: BorderRadius.circular(15),
+              borderRadius: BorderRadius.circular(30),
             ),
             child: TextButton.icon(
               onPressed: () {
@@ -61,13 +61,13 @@ class _CatagoriseListState extends State<CatagoriseList> {
               },
               icon: Icon(
                 Icons.restaurant,
-                size: 32,
+                size: 20,
                 color: isFav ? Colors.white : Colors.black,
               ),
               label: Text(
                 "Resturent(13)",
                 style: TextStyle(
-                  fontSize: 25,
+                  fontSize: 18,
                   color: isFav ? Colors.white : Colors.black,
                   fontWeight: FontWeight.w400,
                 ),
@@ -77,7 +77,7 @@ class _CatagoriseListState extends State<CatagoriseList> {
           Container(
             decoration: BoxDecoration(
               color: isChange ? Colors.black : Colors.white,
-              borderRadius: BorderRadius.circular(15),
+              borderRadius: BorderRadius.circular(30),
             ),
             child: TextButton.icon(
               onPressed: () {
@@ -87,13 +87,13 @@ class _CatagoriseListState extends State<CatagoriseList> {
               },
               icon: Icon(
                 Icons.bedroom_parent_sharp,
-                size: 32,
+                size: 20,
                 color: isChange ? Colors.white : Colors.black,
               ),
               label: Text(
                 "Parking(5)",
                 style: TextStyle(
-                  fontSize: 25,
+                  fontSize: 18,
                   color: isChange ? Colors.white : Colors.black,
                   fontWeight: FontWeight.w400,
                 ),
@@ -103,7 +103,7 @@ class _CatagoriseListState extends State<CatagoriseList> {
           Container(
             decoration: BoxDecoration(
               color: selectedIndex ? Colors.black : Colors.white,
-              borderRadius: BorderRadius.circular(15),
+              borderRadius: BorderRadius.circular(30),
             ),
             child: TextButton.icon(
               onPressed: () {
@@ -113,13 +113,13 @@ class _CatagoriseListState extends State<CatagoriseList> {
               },
               icon: Icon(
                 Icons.coffee,
-                size: 32,
+                size: 20,
                 color: selectedIndex ? Colors.white : Colors.black,
               ),
               label: Text(
                 "Cofe Shop",
                 style: TextStyle(
-                  fontSize: 25,
+                  fontSize: 18,
                   color: selectedIndex ? Colors.white : Colors.black,
                   fontWeight: FontWeight.w400,
                 ),

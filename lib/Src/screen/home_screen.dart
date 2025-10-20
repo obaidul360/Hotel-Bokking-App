@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../Widgets/grid_view_builder.dart';
 import '../Widgets/search_box.dart';
 import '../Widgets/top_design.dart';
 import '../catagorise/catagorise_list.dart';
@@ -47,13 +48,10 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           SearchBox(),
-          SizedBox(height: 10,),
-          Container(
-            margin: EdgeInsets.all(8),
-            child:CatagoriseList(),
-          )
-          
-
+          SizedBox(height: 10),
+          Container(margin: EdgeInsets.all(8), child: CatagoriseList()),
+          SizedBox(height: 8),
+           Expanded(child: GridViewBuilderScreen()),
 
         ],
       ),

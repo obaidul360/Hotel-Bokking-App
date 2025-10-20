@@ -13,8 +13,9 @@ class _SearchBoxState extends State<SearchBox> {
     return Row(
       children: [
         Expanded(
-          flex: 4,
+          flex: 7,
           child: Container(
+            height: 40,
             margin: EdgeInsets.symmetric(horizontal: 8,),
             decoration: BoxDecoration(
               color: Colors.white,
@@ -27,14 +28,14 @@ class _SearchBoxState extends State<SearchBox> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Icon(Icons.search, size: 35, color: Colors.black),
+                  Icon(Icons.search, size: 25, color: Colors.black),
                   Text(
                     "Dhaka, Bangladesh",
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   Icon(
                     Icons.my_location_outlined,
-                    size: 35,
+                    size: 25,
                     color: Colors.black,
                   ),
                 ],
@@ -45,11 +46,11 @@ class _SearchBoxState extends State<SearchBox> {
         Expanded(
           flex: 1,
           child: CircleAvatar(
-            radius: 25,
+            radius: 20,
             backgroundColor: Colors.white,
             child: IconButton(
               onPressed: () {},
-              icon: Icon(Icons.tune, size: 35),
+              icon: Icon(Icons.tune, size: 25),
             ),
           ),
         ),
