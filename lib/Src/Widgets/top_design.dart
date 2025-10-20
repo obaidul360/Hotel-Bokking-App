@@ -11,12 +11,13 @@ class _AppBarDesignState extends State<AppBarDesign> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 60,
+      padding: EdgeInsets.symmetric(horizontal: 8),
+        height: 68,
         width: double.infinity,
         child: Row(
           children: [
             CircleAvatar(
-              radius: 30,
+              radius: 28,
               backgroundImage: AssetImage("assets/obaidul.jpg"),
             ),
             Padding(
@@ -39,10 +40,11 @@ class _AppBarDesignState extends State<AppBarDesign> {
             ),
             SizedBox(width: 65,),
             CircleAvatar(
-              radius: 40,
+              backgroundColor: Colors.white,
+              radius: 35,
               child: IconButton(
                 onPressed: () {},
-                icon: Icon(Icons.notification_add, size: 30),
+                icon: Icon(Icons.notification_add, size: 28),
               ),
             ),
           ],
