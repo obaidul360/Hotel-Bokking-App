@@ -120,6 +120,15 @@ class _GridViewBuilderScreenState extends State<GridViewBuilderScreen> {
                     SizedBox(width: 5),
                   ],
                 ),
+
+                Text(
+                  "Sign Up with Google",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w400,
+                    color: Colors.black,
+                    fontSize: 22,
+                  ),
+                ),
               ],
             ),
           ),
