@@ -25,7 +25,9 @@ class _OnBoardingState extends State<OnBoarding> {
                   width: double.infinity,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage("assets/images.jpeg"),
+                      image: NetworkImage(
+                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOYjW2NNbL9A9mgPH6Tl2L3dRbLOEoBZX7gw&s",
+                      ),
                       fit: BoxFit.fill,
                     ),
                   ),
@@ -39,7 +41,12 @@ class _OnBoardingState extends State<OnBoarding> {
                       children: [
                         TextButton(
                           onPressed: () {
-                            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => HomeScreen(),
+                              ),
+                            );
                           },
                           child: Text(
                             "Get Started",
@@ -57,7 +64,6 @@ class _OnBoardingState extends State<OnBoarding> {
               ],
             ),
           ),
-
         ],
       ),
     );

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'Src/Widgets/on_boarding.dart';
+import 'Src/Widgets/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(child: MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: OnBoarding(),
+      home: SplashScreen(),//OnBoarding(),
     ));
   }
 }

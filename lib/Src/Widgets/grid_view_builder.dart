@@ -16,6 +16,7 @@ class _GridViewBuilderScreenState extends State<GridViewBuilderScreen> {
       "location": "Cox's Bazar, Bangladesh",
       "rating": 4.8,
       "price_per_night": 5200,
+      "discount_price_per_night": 5000,
       "image":
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbl26sFS_XBKPeDKUPqVMXRWXsIjCkIIL_RQ&s",
       "available_rooms": 12,
@@ -26,6 +27,7 @@ class _GridViewBuilderScreenState extends State<GridViewBuilderScreen> {
       "location": "Dhaka, Bangladesh",
       "rating": 4.5,
       "price_per_night": 6800,
+      "discount_price_per_night": 6000,
       "image":
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEiMVqAvkT_bA4I3vXOBODHPfPs-Zf1F33Hg&s",
       "available_rooms": 8,
@@ -36,6 +38,7 @@ class _GridViewBuilderScreenState extends State<GridViewBuilderScreen> {
       "location": "Bandarban, Bangladesh",
       "rating": 4.7,
       "price_per_night": 4500,
+      "discount_price_per_night": 4200,
       "image":
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf-lAcs3gDZM4IroF5eTnaeaZXYehpl9Gsbg&s",
       "available_rooms": 6,
@@ -46,6 +49,7 @@ class _GridViewBuilderScreenState extends State<GridViewBuilderScreen> {
       "location": "Rangamati, Bangladesh",
       "rating": 4.6,
       "price_per_night": 3900,
+      "discount_price_per_night": 3500,
       "image":
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQktK99FYaTyVm1XQ9RvOBnNBvbnKeZ81fveA&s",
       "available_rooms": 9,
@@ -56,6 +60,7 @@ class _GridViewBuilderScreenState extends State<GridViewBuilderScreen> {
       "location": "Sylhet, Bangladesh",
       "rating": 4.9,
       "price_per_night": 5700,
+      "discount_price_per_night": 5500,
       "image":
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSlVs74XWnwZx1sp3RFBKbkqx1RcygJb66AQ&s",
       "available_rooms": 10,
@@ -66,6 +71,7 @@ class _GridViewBuilderScreenState extends State<GridViewBuilderScreen> {
       "location": "Cox's Bazar, Bangladesh",
       "rating": 4.8,
       "price_per_night": 5200,
+      "discount_price_per_night": 4900,
       "image":
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbl26sFS_XBKPeDKUPqVMXRWXsIjCkIIL_RQ&s",
       "available_rooms": 12,
@@ -84,54 +90,81 @@ class _GridViewBuilderScreenState extends State<GridViewBuilderScreen> {
         crossAxisSpacing: 10,
       ),
       itemBuilder: (context, index) {
-        return GestureDetector(
-          child: Card(
-            elevation: 5,
-            color: Color(0xFFEEEDEC),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Image(
-                  image: NetworkImage("${hotel[index]["image"]}"),
-                  height: 100,
-                ),
-                Text("${hotel[index]["name"]}"),
-                Text(
-                  "Location: ${hotel[index]["location"]}",
-                  style: TextStyle(overflow: TextOverflow.ellipsis),
-                ),
-                Text("Price: \$${hotel[index]["price_per_night"]}"),
-                Row(
+        return Column(
+          children: [
+            GestureDetector(
+              child: Card(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Icon(Icons.star_border, color: Colors.orange, size: 18),
-                    Icon(Icons.star_border, color: Colors.orange, size: 18),
-                    Icon(Icons.star_border, color: Colors.orange, size: 18),
-                    Text("${hotel[index]["rating"]}"),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    IconButton(
-                      onPressed: () {},
-                      icon: Icon(Icons.favorite_border, size: 32),
+                    Container(
+                      margin: EdgeInsets.symmetric(horizontal: 4),
+                      height: 100,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        image: DecorationImage(
+                          image: NetworkImage("${hotel[index]["image"]}"),
+                        ),
+                      ),
                     ),
-                    ElevatedButton(onPressed: () {}, child: Text("Booking")),
-                    SizedBox(width: 5),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 5),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Name: ${hotel[index]["name"]}",
+                            style: TextStyle(overflow: TextOverflow.ellipsis),
+                          ),
+                          Text(
+                            "Location: ${hotel[index]["location"]}",
+                            style: TextStyle(overflow: TextOverflow.ellipsis),
+                          ),
+                          Row(
+                            children: [
+                              Text("Price:"),
+                              Text(
+                                "\t\$${hotel[index]["price_per_night"]}",
+                                style: TextStyle(
+                                  decoration: TextDecoration.lineThrough,
+                                ),
+                              ),
+                              Text(
+                                "\t \t\$${hotel[index]["discount_price_per_night"]}",
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        Icon(Icons.star_border, color: Colors.orange, size: 16),
+                        Icon(Icons.star_border, color: Colors.orange, size: 16),
+                        Icon(Icons.star_border, color: Colors.orange, size: 16),
+                        Icon(Icons.star_half, color: Colors.orange, size: 16),
+                        Text("${hotel[index]["rating"]}"),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        IconButton(
+                          onPressed: () {},
+                          icon: Icon(Icons.favorite_border, size: 25),
+                        ),
+                        ElevatedButton(
+                          onPressed: () {},
+                          child: Text("Booking"),
+                        ),
+                        SizedBox(width: 4),
+                      ],
+                    ),
                   ],
                 ),
-
-                Text(
-                  "Sign Up with Google",
-                  style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    color: Colors.black,
-                    fontSize: 22,
-                  ),
-                ),
-              ],
+              ),
             ),
-          ),
+          ],
         );
       },
     );

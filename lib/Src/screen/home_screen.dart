@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../Widgets/grid_view_builder.dart';
 import '../Widgets/search_box.dart';
-import '../Widgets/top_design.dart';
+import '../Widgets/app_bar_design.dart';
 import '../catagorise/catagorise_list.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -20,15 +20,16 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Column(
         children: [
           AppBarDesign(),
+          SearchBox(),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.symmetric(horizontal: 8.0,vertical: 2),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "Nearest Hottle(12)",
+                  "Catagorise",
                   style: TextStyle(
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w400,
                     fontSize: 18,
                     color: Colors.black,
                   ),
@@ -38,7 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Text(
                     "See all",
                     style: TextStyle(
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w400,
                       fontSize: 18,
                       color: Colors.black,
                     ),
@@ -47,11 +48,40 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
-          SearchBox(),
-          SizedBox(height: 10),
-          Container(margin: EdgeInsets.all(8), child: CatagoriseList()),
-          SizedBox(height: 8),
-           Expanded(child: GridViewBuilderScreen()),
+          Container(margin: EdgeInsets.symmetric(horizontal: 8,vertical: 2), child: CatagoriseList()),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0,vertical: 2),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Available",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 18,
+                    color: Colors.black,
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    "See all",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 18,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+           Expanded(
+             child: Padding(
+               padding: const EdgeInsets.symmetric(horizontal: 8.0,vertical: 2),
+               child: GridViewBuilderScreen(),
+             ),
+           ),
 
         ],
       ),
