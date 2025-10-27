@@ -12,87 +12,52 @@ class OnBoarding extends StatefulWidget {
 class _OnBoardingState extends State<OnBoarding> {
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height * 0.3;
     return Scaffold(
       backgroundColor: Colors.grey,
       body: Column(
         children: [
-          Stack(
-            children: [
-              Container(
-                height: 719,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: NetworkImage(
-                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWHuJauTsqS2s8WGLLx_KeE-TNSzel5ckDOw&s",
+          Expanded(
+            child: Stack(
+              children: [
+                Container(
+                  height: MediaQuery.of(context).size.height,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("assets/images.jpeg"),
+                      fit: BoxFit.fill,
                     ),
-                    fit: BoxFit.fill,
                   ),
                 ),
-              ),
-              Positioned(
-                bottom: 15,
-                left: 0,
-                top: 0,
-                right: 0,
-                child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 20,
-                          vertical: 5,
-                        ),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: ElevatedButton(
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => HomeScreen(),
-                                ),
-                              );
-                            },
-                            child: Text(
-                              "Get Started",
-                              style: TextStyle(
-                                color: Colors.grey,
-                                fontSize: 22,
-                                fontWeight: FontWeight.w600,
-                              ),
+                Positioned(
+                  bottom: 80,
+                  left: 100,
+                  child: Card(
+                    elevation: 10,
+                    child: Row(
+                      children: [
+                        TextButton(
+                          onPressed: () {
+                            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+                          },
+                          child: Text(
+                            "Get Started",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 22,
+                              color: Colors.black54,
                             ),
                           ),
                         ),
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => HomeScreen(),
-                            ),
-                          );
-                        },
-                        child: Text(
-                          "Already have an account? LogIn",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w200,
-                            fontSize: 17,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
+
         ],
       ),
     );
