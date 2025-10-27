@@ -1,5 +1,7 @@
+import 'package:booking_app/Src/bottom_nav_bar/bottom_navig_bar.dart';
 import 'package:flutter/material.dart';
 
+import '../form/login.dart';
 import '../screen/home_screen.dart';
 
 class OnBoarding extends StatefulWidget {
@@ -44,7 +46,7 @@ class _OnBoardingState extends State<OnBoarding> {
                             Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => HomeScreen(),
+                                builder: (context) => LoginScreen(),
                               ),
                             );
                           },
