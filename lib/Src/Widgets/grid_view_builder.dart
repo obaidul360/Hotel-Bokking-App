@@ -93,6 +93,7 @@ class _GridViewBuilderScreenState extends State<GridViewBuilderScreen> {
         return Column(
           children: [
             GestureDetector(
+              onTap: (){},
               child: Card(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
