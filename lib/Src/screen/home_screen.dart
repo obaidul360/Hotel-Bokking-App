@@ -48,6 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
+          // Catagorise
           Container(margin: EdgeInsets.symmetric(horizontal: 8,vertical: 2), child: CatagoriseList()),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0,vertical: 2),
@@ -76,6 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
+           // Available
            Expanded(
              child: Padding(
                padding: const EdgeInsets.symmetric(horizontal: 8.0,vertical: 2),

@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 
-class SalonHomeScreen extends StatelessWidget {
-  const SalonHomeScreen({super.key});
+class FavoriteScreen extends StatelessWidget {
+  const FavoriteScreen({super.key});
 
 
   @override
   Widget build(BuildContext context) {
     final List<String> images = [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpjRkfdV2CW7Sg2sT7e3zRmUyUUIOh5IW0bw&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2DmBzej5hr1rPhZEOAPIOSHZm838lzprhkA&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9SRRmhH4X5N2e4QalcoxVbzYsD44C-sQv-w&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR01iIIKHc5FLioR2D8Voo5YM6Bpdxqqa4cZQ&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxTVW7qIPLFJ_alveDA1xU-P0mGXH0CF98Fw&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZSS0Iv5z_vlEtxEbVcc2M5pijthz-FZPl9g&s",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpjRkfdV2CW7Sg2sT7e3zRmUyUUIOh5IW0bw&s",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2DmBzej5hr1rPhZEOAPIOSHZm838lzprhkA&s",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9SRRmhH4X5N2e4QalcoxVbzYsD44C-sQv-w&s",
@@ -177,10 +183,10 @@ class SalonHomeScreen extends StatelessWidget {
                       child: Column(
                         children: [
                           CircleAvatar(
-                            radius: 28,
-                            backgroundImage:
-                                //AssetImage('assets/obaidul.jpg${index + 1}.jpg'),
-                                NetworkImage(images[index])
+                              radius: 28,
+                              backgroundImage:
+                              //AssetImage('assets/obaidul.jpg${index + 1}.jpg'),
+                              NetworkImage(images[index])
                           ),
                           const SizedBox(height: 6),
                           const Text("Salon", style: TextStyle(fontSize: 12)),

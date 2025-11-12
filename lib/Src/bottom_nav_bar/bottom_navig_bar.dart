@@ -1,6 +1,6 @@
-import 'package:booking_app/Src/screen/add_to_card.dart';
-import 'package:booking_app/Src/screen/check_out.dart';
-import 'package:booking_app/Src/screen/favorite.dart';
+import 'package:booking_app/Src/screen/check_out_screen.dart';
+import 'package:booking_app/Src/screen/order_screen.dart';
+import 'package:booking_app/Src/screen/favorite_screen.dart';
 import 'package:booking_app/Src/screen/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -15,9 +15,9 @@ class BottomNavigationBarScreen extends StatefulWidget {
 class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
   final List<Widget> _screen = [
     HomeScreen(),
-    SalonHomeScreen(),
     FavoriteScreen(),
-    AddToCardScreen(),
+    OrderScreen(),
+    CheckOutScreen(),
 
   ];
 
@@ -47,16 +47,16 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
             label: "Home",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.assignment, size: 25),
-            label: "Assignment2",
+            icon: Icon(Icons.favorite_outline_outlined, size: 25),
+            label: "Favorite",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.card_travel, size: 25),
-            label: "Chooice",
+            label: "Order",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.check_box_outlined, size: 25),
-            label: "Check",
+            label: "CheckOut",
           ),
         ],
       ),
