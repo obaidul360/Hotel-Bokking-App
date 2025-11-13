@@ -12,6 +12,11 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("First Favorite Screen"),),
+      body: Column(
+        children: [
+          Text("data")
+        ],
+      ),
     );
   }
 }
